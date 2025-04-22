@@ -5,6 +5,17 @@ def logar_acao(func):
     return wrapper
 
 class SistemaRH:
+    def __init__(self):
+        self.funcionarios = []
+        
+    def cadastrar_funcionario(self, funcionario):
+        self.funcionarios.append(funcionario)
+        
     @logar_acao
     def mostrar_bonus(self, funcionario):
         print(f"Funcionário: {funcionario.get_nome()}, Bônus: {funcionario.calcular_bonus()}")
+      
+    
+    def listar_bonuses(self):
+        for funcionario in self.funcionarios:
+            self.mostrar_bonus(funcionario)  
