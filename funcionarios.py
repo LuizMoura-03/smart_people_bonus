@@ -19,3 +19,7 @@ class Funcionario(ABC):
         if salario < 0:
             raise ValueError("Salário não pode ser negativo")
         self._salario = salario
+        
+class FuncionarioComum(Funcionario):
+    def calcular_bonus(self):
+        return self._salario * 0.10      
