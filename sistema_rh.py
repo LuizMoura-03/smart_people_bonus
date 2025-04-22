@@ -1,7 +1,7 @@
 def logar_acao(func):
-    def wrapper(funcionario):
+    def wrapper(self, funcionario):
         print("Log: Ação de bônus executada")
-        return func(funcionario)
+        return func(self, funcionario)
     return wrapper
 
 class SistemaRH:
@@ -14,8 +14,8 @@ class SistemaRH:
     @logar_acao
     def mostrar_bonus(self, funcionario):
         print(f"Funcionário: {funcionario.get_nome()}, Bônus: {funcionario.calcular_bonus()}")
-      
+    
     
     def listar_bonuses(self):
         for funcionario in self.funcionarios:
-            self.mostrar_bonus(funcionario)  
+            self.mostrar_bonus(funcionario)
